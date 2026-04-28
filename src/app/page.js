@@ -5,29 +5,60 @@ export default function Home() {
     <main className="bg-black text-white min-h-screen">
 
       {/* NAVBAR */}
-      <nav className="fixed top-0 left-0 w-full z-50 bg-black/80 backdrop-blur border-b border-yellow-500/20">
+      <nav className="fixed top-0 left-0 w-full z-50 bg-black/70 backdrop-blur-md border-b border-yellow-500/20">
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-          <div>
-            <h1 className="text-2xl font-bold text-yellow-500 tracking-wide">
-              TRIUMPH CHESS
-            </h1>
-            <p className="text-xs text-gray-400 tracking-[0.3em]">
-              CRAFTED FOR ROYALTY
-            </p>
+
+          {/* LEFT: LOGO + BRAND */}
+          <div className="flex items-center gap-3 group cursor-pointer">
+            <img
+              src="/images/tc-logo.png"
+              alt="Triumph Chess Logo"
+              className="h-12 w-auto object-contain transition-all duration-500 group-hover:scale-105 group-hover:drop-shadow-[0_0_12px_rgba(234,179,8,0.6)]"
+            />
+
+            <div className="leading-tight">
+              <h1 className="text-xl font-semibold text-yellow-500 tracking-wide">
+                TRIUMPH CHESS
+              </h1>
+              <p className="text-[10px] text-gray-400 tracking-[0.3em]">
+                CRAFTED FOR ROYALTY
+              </p>
+            </div>
           </div>
 
-          <a
-            href="https://wa.me/918591998911"
-            target="_blank"
-            className="hidden md:block bg-yellow-500 text-black px-5 py-2 rounded-full font-semibold hover:bg-yellow-400 transition"
-          >
-            Enquire Now
-          </a>
+          {/* RIGHT: ACTION BUTTON */}
+          <div className="flex items-center gap-4">
+
+            <a
+              href="#"
+              className="hidden md:block text-gray-300 hover:text-yellow-400 transition"
+            >
+              Collections
+            </a>
+
+            <a
+              href="#"
+              className="hidden md:block text-gray-300 hover:text-yellow-400 transition"
+            >
+              Craftsmanship
+            </a>
+
+            <a
+              href="https://wa.me/918591998911"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-yellow-500 text-black px-5 py-2 rounded-full font-semibold hover:bg-yellow-400 transition shadow-[0_0_20px_rgba(234,179,8,0.3)]"
+            >
+              Enquire Now
+            </a>
+
+          </div>
+
         </div>
       </nav>
 
       {/* HERO */}
-      <section className="min-h-screen flex flex-col md:flex-row items-center justify-center px-6 pt-28 bg-gradient-to-br from-black via-gray-950 to-black overflow-hidden">
+      <section className="min-h-screen flex flex-col md:flex-row items-center justify-center px-6 pt-28 bg-[radial-gradient(circle_at_top,rgba(234,179,8,0.15),transparent_60%),radial-gradient(circle_at_bottom,rgba(234,179,8,0.08),transparent_60%),black] overflow-hidden">
         <div className="md:w-1/2 text-center md:text-left animate-fadeIn">
           <p className="text-yellow-500 tracking-[0.4em] uppercase text-sm">
             Pure Metal • Handcrafted • Premium
@@ -59,7 +90,7 @@ export default function Home() {
           <img
             src="/images/tc-king.png"
             alt="Triumph Chess King"
-            className="h-[520px] object-contain drop-shadow-[0_0_45px_rgba(234,179,8,0.45)]"
+            className="h-[520px] object-contain drop-shadow-[0_0_45px_rgba(234,179,8,0.45)] [mask-image:linear-gradient(to_bottom,black_80%,transparent)]"
           />
         </div>
       </section>
@@ -145,6 +176,15 @@ export default function Home() {
         .animate-fadeIn {
           animation: fadeIn 1.2s ease-out both;
         }
+
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+            transform: translateY(40px);
+            filter: blur(6px);
+          }
+          to {
+            opacity
       `}</style>
     </main>
   );
